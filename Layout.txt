@@ -1,0 +1,19 @@
+Water Budget Buddy
+
+UX:
+Opening app after PWA install
+
+"Hello! What is your daily goal?"
+
+*Set DL*
+
+"Great! Tap the jug for each DL you drink! "
+
+Visual jug of water will decrease, and reset at local midnight
+If user has more available left, notify at 10 pm.
+
+Using; device clock, notifications
+
+VARIABLES:
+
+dailyLeft
