@@ -2,20 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=390px, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WaterBuddy</title>
     <link rel="stylesheet" href="style.css" />
     <meta name="theme-color" content="#007CF0">
     <link rel="manifest" href="manifest.json">
 </head>
 
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
-      .then(() => console.log('SW registered'))
-      .catch(err => console.error('SW fail', err));
-  }
-</script>
 
 <body>
     <div class="container">
@@ -35,6 +28,13 @@
 
     </div>
 
+    <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('SW registered'))
+        .catch(console.error);
+    }
+    </script>
     
 
 </body>
