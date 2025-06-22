@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaterBuddy</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="theme-color" content="#007CF0">
+</head>
+
+
+<body>
+    <div class="container">
+
+        <h1 class="title">Overview</h1>
+        
+        <label class="heading1" for="drank">Tap for each desiliter:</label>
+        <button class="drinkBtn" id="drinkBtnId">DRINK</button>
+        <label class="heading1" for="drank" id="remainingLbl">Remaining: </label>
+        <button class="resetBtn" id="resetBtnId">RESET</button>
+        
+
+
+    </div>
+
+    <script>
+        document.getElementById('drinkBtnId').onclick = function() {
+        let dlcount = Number(localStorage.getItem('dlcount'));
+        if(dlcount > 0){
+            dlcount--;
+            document.getElementById('remainingLbl').textContent = 'Remaining ' + dlcount;
+            localStorage.setItem('dlcount', dlcount);
+            console.log('Remaining desiliters:', dlcount);
+            
+            if (dlcount === 0){
+                console.log('Desiliters reached!')
+            }
+        }
+        else
+        {
+            console.log('Desiliters reached!')
+            return;
+        }
+        // Reset Button
+        document.getElementById('resetBtnId').onclick = function() {
+            dlcount = null;
+            window.location.href = 'index.html';
+        }
+    }
+    </script>
+    
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
   "name": "Water Buddy",
-  "short_name": "waterbud",
+  "short_name": "Water Buddy",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#007CF0",

@@ -59,3 +59,14 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: background-color 0.3s ease;
 }
+
+.drinkBtn {
+    padding: 12px 24px;
+    background-color: #9ddae9;
+    color: white;
+    border: #9ddae9;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+}

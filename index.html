@@ -11,31 +11,23 @@
 
 
 <body>
+    <script src="sw_init.js"></script>
+    
     <div class="container">
-
+        
         <h1 class="title">Water Buddy</h1>
         
         <label class="heading1" for="goal">Water Goal:</label>
-
+        
         <select class="selectDrpDwn" name="Goal" id="goal">
             <option value="5">5 desiliter</option>
             <option value="10">10 desiliter</option>
             <option value="15">15 desiliter</option>
             <option value="20">20 desiliter</option>
         </select>
-        <button class="counterBtn">OK</button>
-
-
+        <button class="counterBtn" id="readyChoice">OK</button>
     </div>
-
-    <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js')
-        .then(() => console.log('SW registered'))
-        .catch(console.error);
-    }
-    </script>
+    <script type="module" src="script.js"></script>
     
-
 </body>
 </html>
