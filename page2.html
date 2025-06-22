@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WaterBuddy</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=0.0.1" />
     <meta name="theme-color" content="#007CF0">
 </head>
 
@@ -22,33 +22,8 @@
 
 
     </div>
+    <script type="module" src="script.js?v=0.0.1"></script>
 
-    <script>
-        document.getElementById('drinkBtnId').ontouchstart = function() {
-        let dlcount = Number(localStorage.getItem('dlcount'));
-        if(dlcount > 0){
-            dlcount--;
-            document.getElementById('remainingLbl').textContent = 'Remaining ' + dlcount;
-            localStorage.setItem('dlcount', dlcount);
-            console.log('Remaining desiliters:', dlcount);
-            
-            if (dlcount === 0){
-                console.log('Desiliters reached!')
-            }
-        }
-        else
-        {
-            console.log('Desiliters reached!')
-            return;
-        }
-        // Reset Button
-        document.getElementById('resetBtnId').ontouchstart = function() {
-            dlcount = null;
-            window.location.href = 'index.html';
-        }
-    }
-    </script>
-    
 
 </body>
 </html>
