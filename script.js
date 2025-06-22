@@ -58,6 +58,7 @@
     //RESET BUTTON
     const handleResetClick = (e) => {
         e.preventDefault();
+        localStorage.clear();
         dlcount = null;
         window.location.href = 'index.html';
     }
