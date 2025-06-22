@@ -24,7 +24,7 @@
     </div>
 
     <script>
-        document.getElementById('drinkBtnId').onclick = function() {
+        document.getElementById('drinkBtnId').ontouchstart = function() {
         let dlcount = Number(localStorage.getItem('dlcount'));
         if(dlcount > 0){
             dlcount--;
@@ -42,7 +42,7 @@
             return;
         }
         // Reset Button
-        document.getElementById('resetBtnId').onclick = function() {
+        document.getElementById('resetBtnId').ontouchstart = function() {
             dlcount = null;
             window.location.href = 'index.html';
         }

@@ -1,7 +1,7 @@
 
     var dlcount = null;
 
-    document.getElementById('readyChoice').onclick = function () {
+    document.getElementById('readyChoice').ontouchstart = function () {
         const goal = document.getElementById('goal');
         dlcount = Number(goal.value);
         localStorage.setItem('dlcount', dlcount)
