@@ -8,6 +8,15 @@
     <meta name="theme-color" content="#007CF0">
     <link rel="manifest" href="manifest.json">
 </head>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(() => console.log('SW registered'))
+      .catch(err => console.error('SW fail', err));
+  }
+</script>
+
 <body>
     <div class="container">
 
@@ -25,6 +34,8 @@
 
 
     </div>
+
+    
 
 </body>
 </html>
