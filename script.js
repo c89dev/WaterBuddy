@@ -1,13 +1,6 @@
+    const APP_VERSION = '0.0.4'
+    let dlcount = null;
 
-    var dlcount = null;
-
-    // document.getElementById('readyChoice').pointerdown = function () {
-    //     const goal = document.getElementById('goal');
-    //     dlcount = Number(goal.value);
-    //     localStorage.setItem('dlcount', dlcount)
-    //     window.location.href = 'page2.html';
-    //     console.log('dlcount set to', dlcount);
-    // }
 
     //START BUTTON
     const handleStartClick = (e) => {
