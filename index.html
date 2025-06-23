@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WaterBuddy</title>
-    <link rel="stylesheet" href="style.css?v=0.0.5" />
+    <link rel="stylesheet" href="style.css?v=0.0.7" />
     <meta name="theme-color" content="#007CF0">
     <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 
 
 <body>
-    <script src="sw_init.js"></script>
     
     <div class="container">
+        <script src="sw_init.js"></script>
         
         <h1 class="title">Water Buddy</h1>
-        <h2>ver 0.0.5</h2>
+        <h2>ver 0.0.7</h2>
         
         <label class="heading1" for="goal">Water Goal:</label>
         
@@ -26,9 +27,18 @@
             <option value="15">15 desiliter</option>
             <option value="20">20 desiliter</option>
         </select>
-        <button class="counterBtn" id="readyChoice">OK</button>
+        <button class="basicBtn" id="readyChoice">OK</button>
     </div>
-    <script type="module" src="script.js?v=0.0.3"></script>
+    <script type="module">
+        
+        import {
+            initStartBtn,
+            initPageChecker
+        } from './script.js?v=0.0.7'
+        
+        initStartBtn();
+        initPageChecker();
+    </script>
     
 </body>
 </html>

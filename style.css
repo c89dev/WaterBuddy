@@ -9,7 +9,7 @@ html, body {
 }
 
 body {
-    background: linear-gradient(to bottom, rgb(28, 115, 150), blue);
+    background: linear-gradient(to bottom, rgb(28, 115, 150), rgb(40, 40, 236));
 }
 
 .container {
@@ -21,7 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(to bottom, rgb(28, 115, 150), blue);
+    background: linear-gradient(to bottom, rgb(31, 128, 166), blue);
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
@@ -44,12 +44,12 @@ body {
 }
 
 .selectDrpDwn {
-  font-size: 1.2rem;
-  padding: 8px 12px;
-  min-width: 150px; /* or whatever width */
+    font-size: 1.2rem;
+    padding: 8px 12px;
+    min-width: 150px; /* or whatever width */
 }
 
-.counterBtn {
+.basicBtn {
     padding: 12px 24px;
     background-color: #9ddae9;
     color: white;
@@ -61,7 +61,7 @@ body {
 }
 
 .drinkBtn {
-    padding: 12px 24px;
+    padding: 24px 48px;
     background-color: #9ddae9;
     color: white;
     border: #9ddae9;
@@ -70,3 +70,21 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: background-color 0.3s ease;
 }
+
+.resetBtn {
+    padding: 6px 12px;
+    background-color: #ba1d08;
+    color: white;
+    border: #9ddae9;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+}
+
+.cupBtn {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+

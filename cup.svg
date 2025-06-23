@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 604.17 638">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f2f2f2;
+        opacity: .58;
+      }
+
+      .cls-2 {
+        fill: #e7f4ff;
+        stroke: #d4e6ff;
+        stroke-width: 12px;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+        stroke: #cfbfff;
+        stroke-width: 4px;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="302.08" y1="605.5" x2="302.08" y2="96.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8bbfff"/>
+      <stop offset="1" stop-color="#b9cfff"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_1" data-name="Layer 1">
+    <path class="cls-2" d="m564.58,52c0,25.41,172,580-262.5,580S39.58,77.41,39.58,52,157.11,6,302.08,6s262.5,20.59,262.5,46Z"/>
+  </g>
+  <g id="Layer_1_copy" data-name="Layer 1 copy">
+    <path class="cls-3" d="m550.32,133.9c0,20.66,162.66,471.6-248.24,471.6S53.84,154.56,53.84,133.9s111.14-37.4,248.24-37.4,248.24,16.75,248.24,37.4Z"/>
+  </g>
+  <g id="Layer_1_copy_2" data-name="Layer 1 copy 2">
+    <path class="cls-1" d="m299.02,98.36c94.28,90.75-54.48,457.03-149.94,449.14-91.08-7.53-180.3-359.55-69.94-449.14,20.17-16.37,61.54-35.79,109.94-35.86,40.75-.06,86.8,13.59,109.94,35.86Z"/>
+  </g>
+</svg>

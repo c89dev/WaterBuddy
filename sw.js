@@ -1,4 +1,5 @@
-const CACHE_NAME = 'waterbuddy-v${APP_VERSION}'; // bump when you deploy new version
+const APP_VERSION = '0.0.7';
+const CACHE_NAME = `waterbuddy-v=${APP_VERSION}`; // bump when you deploy new version
 
 self.addEventListener('install', (event) => {
     self.skipWaiting(); // force update immediately
