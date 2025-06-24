@@ -1,6 +1,14 @@
-    const APP_VERSION = '0.0.8'
+    const APP_VERSION = '0.0.9'
     let dlcount = null;
     TextTrackList = new Text;
+
+    // const img = document.querySelector('.cupBtn img');
+    // img.addEventListener('contextmenu', e => e.preventDefault());
+    // img.addEventListener('touchstart', e => {
+    //     if (e.touches.length === 1) {
+    //         e.preventDefault(); // blocks long-press menu
+    //     }
+    //     });
 
     // Initialize Service Worker
     if ('serviceWorker' in navigator) {

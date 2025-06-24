@@ -8,9 +8,9 @@
       }
 
       .cls-2 {
-        fill: #e7f4ff;
-        stroke: #d4e6ff;
-        stroke-width: 12px;
+        fill: url(#linear-gradient);
+        stroke: #cfbfff;
+        stroke-width: 4px;
       }
 
       .cls-2, .cls-3 {
@@ -18,23 +18,38 @@
       }
 
       .cls-3 {
-        fill: url(#linear-gradient);
-        stroke: #cfbfff;
-        stroke-width: 4px;
+        fill: url(#radial-gradient);
+        opacity: .47;
+        stroke: #fff;
+        stroke-width: 12px;
       }
     </style>
-    <linearGradient id="linear-gradient" x1="302.08" y1="605.5" x2="302.08" y2="96.5" gradientUnits="userSpaceOnUse">
+    <radialGradient id="radial-gradient" cx="302.08" cy="277.89" fx="302.08" fy="277.89" r="369.55" gradientTransform="translate(-115.64 573) rotate(-89.04) scale(1 1.49)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b5e4fa"/>
+      <stop offset=".43" stop-color="#b3e2f8"/>
+      <stop offset=".58" stop-color="#acdbf5"/>
+      <stop offset=".69" stop-color="#a0cfee"/>
+      <stop offset=".78" stop-color="#8fbfe4"/>
+      <stop offset=".85" stop-color="#79a9d7"/>
+      <stop offset=".92" stop-color="#5e8ec8"/>
+      <stop offset=".98" stop-color="#3e6fb6"/>
+      <stop offset="1" stop-color="#3162ae"/>
+    </radialGradient>
+    <linearGradient id="linear-gradient" x1="302.91" y1="605.5" x2="302.91" y2="96.5" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#8bbfff"/>
       <stop offset="1" stop-color="#b9cfff"/>
     </linearGradient>
   </defs>
   <g id="Layer_1" data-name="Layer 1">
-    <path class="cls-2" d="m564.58,52c0,25.41,172,580-262.5,580S39.58,77.41,39.58,52,157.11,6,302.08,6s262.5,20.59,262.5,46Z"/>
+    <path class="cls-3" d="m564.58,52c0,25.41,172,580-262.5,580S39.58,77.41,39.58,52,157.11,6,302.08,6s262.5,20.59,262.5,46Z"/>
   </g>
   <g id="Layer_1_copy" data-name="Layer 1 copy">
-    <path class="cls-3" d="m550.32,133.9c0,20.66,162.66,471.6-248.24,471.6S53.84,154.56,53.84,133.9s111.14-37.4,248.24-37.4,248.24,16.75,248.24,37.4Z"/>
+    <path class="cls-2" d="m550.32,133.9c0,20.66,136.92,471.6-248.24,471.6S53.84,154.56,53.84,133.9s111.14-37.4,248.24-37.4,248.24,16.75,248.24,37.4Z"/>
   </g>
   <g id="Layer_1_copy_2" data-name="Layer 1 copy 2">
-    <path class="cls-1" d="m299.02,98.36c94.28,90.75-54.48,457.03-149.94,449.14-91.08-7.53-180.3-359.55-69.94-449.14,20.17-16.37,61.54-35.79,109.94-35.86,40.75-.06,86.8,13.59,109.94,35.86Z"/>
+    <path class="cls-1" d="m122.08,344.5c19,243,145.59,262.53,54,225C32.08,510.5,15.08,293.5,90.08,82.5c10.79-30.34,103-50,93-19-12.51,38.78-71.14,151.26-61,281Z"/>
+  </g>
+  <g id="Layer_1_copy_3" data-name="Layer 1 copy 3">
+    <path class="cls-1" d="m563.08,242.5c-8.19,17.16-16,18-33,7-40.52-26.22-37.84-125.36-16-128,14.02-1.7,32.93,26.26,38,40,6.01,16.28,17.29,67.81,11,81Z"/>
   </g>
 </svg>

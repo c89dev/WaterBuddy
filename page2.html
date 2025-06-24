@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WaterBuddy</title>
-    <link rel="stylesheet" href="style.css?v=0.0.8" />
+    <link rel="stylesheet" href="style.css?v=0.0.9" />
     <meta name="theme-color" content="#007CF0">
 </head>
 
 
 <body>
+    <script>
+        window.addEventListener('contextmenu', e => e.preventDefault());
+    </script>
     <div class="container">
 
         <h1 class="heading1">Overview</h1>
@@ -37,7 +40,7 @@
             initLocalTime,
             pressDrinkBtn,
             releaseDrinkBtn
-        } from './script.js?v=0.0.8'
+        } from './script.js?v=0.0.9'
         
         initDrinkBtn();
         initResetBtn();
