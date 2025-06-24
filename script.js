@@ -1,5 +1,6 @@
-    const APP_VERSION = '0.0.7'
+    const APP_VERSION = '0.0.8'
     let dlcount = null;
+    TextTrackList = new Text;
 
     // Initialize Service Worker
     if ('serviceWorker' in navigator) {
@@ -29,12 +30,13 @@
     
     //DRINK BUTTON
     function handleDrinkClick(e){
+
         e.preventDefault();
         let dlcount = Number(localStorage.getItem('dlcount'));
         const glugg = new Audio('glugg.mp3')
         if(dlcount > 0){
             dlcount--;
-            document.getElementById('remainingLbl').textContent = 'Remaining: ' + dlcount;
+            document.getElementById('remainingLbl').textContent = dlcount;
             localStorage.setItem('dlcount', dlcount);
             console.log('Remaining desiliters:', dlcount);
             glugg.play();
@@ -59,13 +61,48 @@
         }
     }
 
+            export function pressDrinkBtn(){
+        window.addEventListener('pointercancel', drinkAnim2);
+        const drinkBtn = document.getElementById('drinkBtnId');
+        if(drinkBtn){
+            ['pointerdown'].forEach(evt =>
+            drinkBtn.addEventListener(evt, drinkAnim)
+            );
+        }
+    }
+
+        export function releaseDrinkBtn(){
+        window.addEventListener('pointercancel', drinkAnim2);
+        const drinkBtn = document.getElementById('drinkBtnId');
+        if(drinkBtn){
+            ['pointerup'].forEach(evt =>
+            drinkBtn.addEventListener(evt, drinkAnim2)
+            );
+        }
+    }
+
+    function drinkAnim(e){
+        
+        const img = document.querySelector('.cupBtn img');
+        img.style.transform = 'scale(1.3)';
+    }
+        function drinkAnim2(e){
+        
+        const img = document.querySelector('.cupBtn img');
+        img.style.transform = 'scale(1.1)';
+    }
+
     //RESET BUTTON
     function handleResetClick(e){
+    if(confirm("Are you sure you want to Reset?")){   
         e.preventDefault();
         localStorage.clear();
         dlcount = null;
         window.location.href = 'index.html';
     }
+
+    }
+    
     
     export function initResetBtn(){
         const resetBtn = document.getElementById('resetBtnId');
@@ -87,7 +124,7 @@
     export function initCurrentDl(){
         if(!localStorage.getItem('dlcount') == 0){
         const remaining = localStorage.getItem('dlcount');
-        document.getElementById('remainingLbl').textContent = `Remaining: ${remaining}`;
+        document.getElementById('remainingLbl').textContent = `${remaining}`;
         }
     }
 
@@ -95,6 +132,30 @@
     export function initLocalTime(){
         const day = new Date().toLocaleDateString(undefined, { weekday: 'long' });
         document.getElementById('timeDisplayId').textContent = day;
+
+
+    }
+
+    
+    //TIMER
+    export function newDayReset(){
+
+        const currentDay = new Date().getDay().toLocaleString();
+        let currentHour = new Date().getHours().toLocaleString();
+        let currentMin = new Date().getMinutes().toLocaleString();
+        let currentSec = new Date().getSeconds().toLocaleString();
+        
+        if (currentHour == 0 && currentMin == 0 && currentSec < 1){
+            console.log("WRITING LOG")
+            console.log("RESETTING")
+        }
+    }
+
+    //LOGGER
+    export function journal(){
+        journal.addEventListener(handleResetClick);{
+
+        }
     }
 
     

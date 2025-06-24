@@ -1,1 +1,1 @@
-// navigator.serviceWorker.register('sw.js?v=0.0.7')
+// navigator.serviceWorker.register('sw.js?v=0.0.8')
