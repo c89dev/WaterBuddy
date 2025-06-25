@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WaterBuddy</title>
-    <link rel="stylesheet" href="style.css?v=0.0.9" />
+    <link rel="stylesheet" href="style.css?v=0.1.0" />
     <meta name="theme-color" content="#007CF0">
 </head>
 
@@ -15,7 +15,7 @@
     </script>
     <div class="container">
 
-        <h1 class="heading1">Overview</h1>
+        <!-- <h1 class="heading1">Overview</h1> -->
         <label class="title" id="timeDisplayId">placeholder</label>
         
         <label class="heading1" for="drank">Tap for each desiliter:</label>
@@ -27,8 +27,10 @@
             <label class="bigCounter" for="drank" id="remainingLbl"></label>
         </div>
         
-        
+        <div class="containerOpt">
+        <button class="journalBtn" id="journalBtnId">JOURNAL</button>
         <button class="resetBtn" id="resetBtnId">RESET</button>
+        </div>
         
     </div>
         <script type="module">
@@ -39,10 +41,12 @@
             initCurrentDl,
             initLocalTime,
             pressDrinkBtn,
-            releaseDrinkBtn
-        } from './script.js?v=0.0.9'
+            releaseDrinkBtn,
+            initJournalBtn
+        } from './script.js?v=0.1.0'
         
         initDrinkBtn();
+        initJournalBtn();
         initResetBtn();
         initCurrentDl();
         initLocalTime();

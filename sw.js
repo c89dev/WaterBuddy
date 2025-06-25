@@ -1,4 +1,4 @@
-const APP_VERSION = '0.0.9';
+const APP_VERSION = '0.1.0';
 const CACHE_NAME = `waterbuddy-v=${APP_VERSION}`; // bump when you deploy new version
 
 self.addEventListener('install', (event) => {

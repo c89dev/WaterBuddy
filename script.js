@@ -1,6 +1,7 @@
-    const APP_VERSION = '0.0.9'
+    const APP_VERSION = '0.1.0'
     let dlcount = null;
-    TextTrackList = new Text;
+    let drank = null;
+    setInterval(newDayReset, 1000);
 
     // const img = document.querySelector('.cupBtn img');
     // img.addEventListener('contextmenu', e => e.preventDefault());
@@ -40,12 +41,15 @@
     function handleDrinkClick(e){
 
         e.preventDefault();
+        let drank = Number(localStorage.getItem('drank'));
         let dlcount = Number(localStorage.getItem('dlcount'));
         const glugg = new Audio('glugg.mp3')
         if(dlcount > 0){
             dlcount--;
+            drank++;
             document.getElementById('remainingLbl').textContent = dlcount;
             localStorage.setItem('dlcount', dlcount);
+            localStorage.setItem('drank', drank);
             console.log('Remaining desiliters:', dlcount);
             glugg.play();
             
@@ -69,7 +73,7 @@
         }
     }
 
-            export function pressDrinkBtn(){
+        export function pressDrinkBtn(){
         window.addEventListener('pointercancel', drinkAnim2);
         const drinkBtn = document.getElementById('drinkBtnId');
         if(drinkBtn){
@@ -102,9 +106,9 @@
 
     //RESET BUTTON
     function handleResetClick(e){
-    if(confirm("Are you sure you want to Reset?")){   
+    if(confirm("Reset the cup? Journal will not be affected.")){   
         e.preventDefault();
-        localStorage.clear();
+        localStorage.removeItem('dlcount');
         dlcount = null;
         window.location.href = 'index.html';
     }
@@ -120,6 +124,33 @@
             );
         }
     }
+
+    
+
+    //JOURNAL BUTTON
+    function handleJournalClick(e){
+        window.location.href = 'page3.html';
+    }
+
+    export function initJournalBtn(){
+        const journalBtn = document.getElementById('journalBtnId');
+        if(journalBtn){
+            journalBtn.addEventListener('pointerup', handleJournalClick);
+        }
+    }
+
+       //BACK BUTTON
+    function handleBackClick(e){
+        window.location.href = 'page2.html';
+    }
+
+    export function initBackBtn(){
+        const backBtn = document.getElementById('backBtnId');
+        if(backBtn){
+            backBtn.addEventListener('pointerup', handleBackClick);
+        }
+    }
+    
     //PAGE CHECKER
     export function initPageChecker(){
         if(window.location.pathname.endsWith('index.html')&& localStorage.getItem('dlcount')){
@@ -148,23 +179,35 @@
     //TIMER
     export function newDayReset(){
 
+        let timestamp = new Intl.DateTimeFormat('nb-NO').format(new Date());
         const currentDay = new Date().getDay().toLocaleString();
         let currentHour = new Date().getHours().toLocaleString();
         let currentMin = new Date().getMinutes().toLocaleString();
         let currentSec = new Date().getSeconds().toLocaleString();
+        let paragraph = document.getElementById('logParaId');
         
         if (currentHour == 0 && currentMin == 0 && currentSec < 1){
-            console.log("WRITING LOG")
-            console.log("RESETTING")
+            journal();
         }
     }
 
     //LOGGER
     export function journal(){
-        journal.addEventListener(handleResetClick);{
+        let drank = Number(localStorage.getItem('drank'));
+        let dlcount = Number(localStorage.getItem('dlcount'));
+        let paragraph = document.getElementById('logParaId');
+        let timestamp = new Intl.DateTimeFormat('nb-NO').format(new Date());
 
-        }
+        let existingLog = localStorage.getItem('paragraph') || '';
+        let newEntry = `${timestamp}, ${drank} dl consumed`;
+
+        let updatedLog = existingLog + newEntry + '\n';
+
+        paragraph.innerText = updatedLog;
+        localStorage.setItem('paragraph', updatedLog);
+
     }
+    
 
     
     
