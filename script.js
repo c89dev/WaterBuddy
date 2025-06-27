@@ -1,15 +1,7 @@
     const APP_VERSION = '0.1.0'
+    
     let dlcount = null;
     let drank = null;
-    setInterval(newDayReset, 1000);
-
-    // const img = document.querySelector('.cupBtn img');
-    // img.addEventListener('contextmenu', e => e.preventDefault());
-    // img.addEventListener('touchstart', e => {
-    //     if (e.touches.length === 1) {
-    //         e.preventDefault(); // blocks long-press menu
-    //     }
-    //     });
 
     // Initialize Service Worker
     if ('serviceWorker' in navigator) {
@@ -109,6 +101,8 @@
     if(confirm("Reset the cup? Journal will not be affected.")){   
         e.preventDefault();
         localStorage.removeItem('dlcount');
+        localStorage.removeItem('drank');
+
         dlcount = null;
         window.location.href = 'index.html';
     }
@@ -139,7 +133,7 @@
         }
     }
 
-       //BACK BUTTON
+    //BACK BUTTON
     function handleBackClick(e){
         window.location.href = 'page2.html';
     }
@@ -148,6 +142,18 @@
         const backBtn = document.getElementById('backBtnId');
         if(backBtn){
             backBtn.addEventListener('pointerup', handleBackClick);
+        }
+    }
+
+    //MAKE ENTRY BUTTON
+    function handleEntryClick(e){
+        journal();
+    }
+
+    export function initEntryBtn(){
+        const entryBtn = document.getElementById('entryBtnId');
+        if(entryBtn){
+            entryBtn.addEventListener('pointerup', handleEntryClick);
         }
     }
     
@@ -176,7 +182,7 @@
     }
 
     
-    //TIMER
+    //TIMER (Background tasks not possible in regular PWA)
     export function newDayReset(){
 
         let timestamp = new Intl.DateTimeFormat('nb-NO').format(new Date());
@@ -185,18 +191,14 @@
         let currentMin = new Date().getMinutes().toLocaleString();
         let currentSec = new Date().getSeconds().toLocaleString();
         let paragraph = document.getElementById('logParaId');
-        
-        if (currentHour == 0 && currentMin == 0 && currentSec < 1){
-            journal();
-        }
     }
 
     //LOGGER
     export function journal(){
         let drank = Number(localStorage.getItem('drank'));
         let dlcount = Number(localStorage.getItem('dlcount'));
-        let paragraph = document.getElementById('logParaId');
         let timestamp = new Intl.DateTimeFormat('nb-NO').format(new Date());
+        let paragraph = document.getElementById('logParaId');
 
         let existingLog = localStorage.getItem('paragraph') || '';
         let newEntry = `${timestamp}, ${drank} dl consumed`;

@@ -8,22 +8,26 @@
     <meta name="theme-color" content="#007CF0">
 </head>
 <body>
-    <button class="backBtn" id="backBtnId">BACK</button>
+    
+    
     <div class="containerLog">
-        <h1>Journal</h1>
         
+        <button class="entryBtn" id="entryBtnId">MAKE ENTRY</button>
+        <button class="backBtn" id="backBtnId">BACK</button>
+        
+        <h1 style="color: rgb(29, 29, 29);">Journal</h1>
         <p id="logParaId"></p>
         
     </div>
     <script type=module>
         import{
-            newDayReset,
             journal,
-            initBackBtn
+            initBackBtn,
+            initEntryBtn
         }
         from './script.js?v=0.1.0'
-        newDayReset();
         initBackBtn();
+        initEntryBtn();
         
         </script>
     <script>
